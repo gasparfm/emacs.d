@@ -1,0 +1,19 @@
+
+;;----------------------------------------------------------------------------
+;; Some cool functions
+;;----------------------------------------------------------------------------
+;; These functions are made by me (Twitter: @gaspar_fm; GitHub: gasparfm) or
+;; heavily modified by me
+
+;;----------------------------------------------------------------------------
+;; Toggles fullscreen
+;;----------------------------------------------------------------------------
+(defun myemacs/toggle-fullscreen ()
+       (interactive)
+       (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
+	    		 '(2 "_NET_WM_STATE_FULLSCREEN" 0)))
+
+(defun myemacs/elapsed-time ()
+  (let ((elapsed (float-time (time-subtract (current-time)
+                                            emacs-start-time))))
+    (message "[STARTUP] Loading %s ... done (%.3fs)" load-file-name elapsed)))
