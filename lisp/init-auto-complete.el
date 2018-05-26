@@ -1,5 +1,6 @@
 ;; Auto-complete basic configuration.
-;; We'll find more specific configuration in language files
+;; We'll Find more specific configuration in language files
+(require-package 'auto-complete)
 (require 'auto-complete)
 (require 'auto-complete-config)
 (global-auto-complete-mode)
