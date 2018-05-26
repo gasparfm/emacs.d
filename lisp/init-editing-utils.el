@@ -1,5 +1,4 @@
 ;; From : https://github.com/purcell/emacs.d/blob/master/lisp/init-editing-utils.el
-(require-package 'diminish)
 (require-package 'unfill)
 (require-package 'focus)
 

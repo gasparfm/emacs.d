@@ -72,6 +72,7 @@ locate PACKAGE."
 
 (require-package 'cl-lib)
 (require 'cl-lib)
+(require-package 'diminish)
 
 (add-hook 'package-menu-mode-hook 'sanityinc/maybe-widen-package-menu-columns)
 

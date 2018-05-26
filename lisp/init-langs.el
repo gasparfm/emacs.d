@@ -18,9 +18,10 @@
 ;;----------------------------------------------------------------------------
 ;; CSV Mode
 ;;----------------------------------------------------------------------------
-
 (require-package 'csv-mode)
-(require-package 'csv-nav)
+(load-file (expand-file-name "site-lisp/csv-nav.el" user-emacs-directory))
+; CSV NAV not available
+;(require-package 'csv-nav)
 
 (add-auto-mode 'csv-mode "\\.[Cc][Ss][Vv]\\'")
 
@@ -46,7 +47,10 @@
 ;;----------------------------------------------------------------------------
 ;; HTML Mode
 ;;----------------------------------------------------------------------------
-(require-package 'tidy)
+(load-file (expand-file-name "site-lisp/tidy.el" user-emacs-directory))
+; Tidy not available
+;(require-package 'tidy)
+
 (add-hook 'html-mode-hook (lambda () (tidy-build-menu html-mode-map)))
 
 (require-package 'tagedit)
