@@ -73,7 +73,14 @@
 ;; Web mode
 ;;----------------------------------------------------------------------------
 (require-package 'web-mode)
-(add-hook 'web-mode-hook (lambda () ((fci-mode 0))))
+(defvar-local company-fci-mode-on-p nil)
+
+(add-hook 'company-completion-started-hook 'company-turn-off-fci)
+(add-hook 'company-completion-finished-hook 'company-maybe-turn-on-fci)
+(add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci)
+
+(add-hook 'web-mode-hook (lambda () (progn (myemacs/turn-off-fci)
+																			(myemacs/turn-on-linum))))
 
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))

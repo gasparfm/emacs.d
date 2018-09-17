@@ -375,9 +375,9 @@ With arg N, insert N newlines."
   (interactive)
   (unwind-protect
       (progn
-        (linum-mode 1)
+        (myemacs/turn-on-linum)
         (goto-line (read-number "Goto line: ")))
-    (linum-mode -1)))
+    (myemacs/linum-old-status)))
 
 ;; Delete trailing whitespace before saving fil
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
